@@ -19,7 +19,12 @@ class ListFragment : Fragment() {
 
         // handler floating action button on click
         view.floatingActionButton.setOnClickListener {
-            findNavController().navigate(R.id.action_listFragment_to_addFragment);
+            findNavController().navigate(R.id.action_listFragment_to_addFragment)
+        }
+
+        // need to remove it later. Using it to update layout
+        view.listLayout.setOnClickListener {
+            findNavController().navigate(R.id.action_listFragment_to_updateFragment)
         }
 
         return view;
