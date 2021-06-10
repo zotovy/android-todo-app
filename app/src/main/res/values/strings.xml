@@ -6,6 +6,11 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="create_task">Create task</string>
+    <string name="search">Search</string>
+    <string name="sort_by">Sort by</string>
+    <string name="priority_high">Priority High</string>
+    <string name="priority_low">Priority low</string>
+    <string name="delete_all">Delete All</string>
 
     <string-array name="priorities">
         <item>High Priority</item>
