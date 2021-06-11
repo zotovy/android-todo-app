@@ -11,14 +11,15 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dev.zotov.todoapp.R
-import dev.zotov.todoapp.data.models.Priority
 import dev.zotov.todoapp.data.models.TodoData
 import dev.zotov.todoapp.data.viewmodels.TodoViewModel
+import dev.zotov.todoapp.fragments.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 
 class AddFragment : Fragment() {
 
     private val viewModel: TodoViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,12 +38,12 @@ class AddFragment : Fragment() {
         val priority = priority_Spinner.selectedItem.toString()
         val description = description_EditText.text.toString()
 
-        val validation = verifyData(title, description)
+        val validation = sharedViewModel.verifyData(title, description)
         if (validation) {
             val data = TodoData(
                 1,
                 title,
-                stringToPriority(priority),
+                sharedViewModel.stringToPriority(priority),
                 description
             )
             viewModel.insertData(data)
@@ -53,22 +54,5 @@ class AddFragment : Fragment() {
         }
     }
 
-    private fun verifyData(title: String, description: String): Boolean {
-        return !TextUtils.isEmpty(title) && !TextUtils.isEmpty(description)
-    }
 
-    private fun stringToPriority(priority: String): Priority {
-        return when (priority) {
-            "High Priority" -> {
-                Priority.HIGH
-            }
-            "Medium Priority" -> {
-                Priority.MEDIUM
-            }
-            "Low Priority" -> {
-                Priority.LOW
-            }
-            else -> Priority.LOW
-        }
-    }
 }
