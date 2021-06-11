@@ -15,6 +15,7 @@ import dev.zotov.todoapp.data.models.TodoData
 import dev.zotov.todoapp.data.viewmodels.TodoViewModel
 import dev.zotov.todoapp.fragments.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
+import kotlinx.android.synthetic.main.fragment_add.view.*
 
 class AddFragment : Fragment() {
 
@@ -29,6 +30,8 @@ class AddFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_add, container, false)
 
         view.findViewById<Button>(R.id.confirm_Button).setOnClickListener { insertDataToDb() }
+
+        view.priority_Spinner.onItemSelectedListener = sharedViewModel.listener;
 
         return view;
     }
