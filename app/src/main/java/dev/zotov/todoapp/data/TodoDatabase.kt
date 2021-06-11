@@ -11,7 +11,7 @@ import dev.zotov.todoapp.data.models.TodoData
 @TypeConverters(Converter::class)
 abstract class TodoDatabase : RoomDatabase() {
 
-    abstract fun todoDao(): TodoData
+    abstract fun todoDao(): TodoDao
 
     companion object {
         private var INSTANCE: TodoDatabase? = null
