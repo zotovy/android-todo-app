@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import dev.zotov.todoapp.data.models.TodoData
 
 @Database(entities = [TodoData::class], version = 1, exportSchema = false)
 @TypeConverters(Converter::class)

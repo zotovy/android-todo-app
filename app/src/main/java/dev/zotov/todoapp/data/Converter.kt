@@ -1,6 +1,7 @@
 package dev.zotov.todoapp.data
 
 import androidx.room.TypeConverter
+import dev.zotov.todoapp.data.models.Priority
 
 class Converter {
 

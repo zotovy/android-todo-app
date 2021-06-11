@@ -1,4 +1,4 @@
-package dev.zotov.todoapp.data
+package dev.zotov.todoapp.data.models
 
 enum class Priority {
     HIGH,

@@ -1,4 +1,4 @@
-package dev.zotov.todoapp.data
+package dev.zotov.todoapp.data.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

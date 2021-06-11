@@ -2,6 +2,7 @@ package dev.zotov.todoapp.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import dev.zotov.todoapp.data.models.TodoData
 
 @Dao
 interface TodoDao {
